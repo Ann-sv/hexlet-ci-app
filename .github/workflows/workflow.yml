@@ -15,4 +15,3 @@ jobs:
         run: npm test
       - run: make lint
       - run: make install
-      - run: make start
