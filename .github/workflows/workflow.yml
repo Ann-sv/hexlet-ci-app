@@ -6,9 +6,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - uses: hexlet-components/hello-from-hexlet-action@release
         with:
          node-version: '18.x'
-         cache: 'npm' # ускоряет повторные сборки
+         cache: 'npm'
       - run: make setup
-      - run: make test
+      - name: run tests
+        run: npm test
       - run: make lint
+      - run: make install
+      - run: make start
